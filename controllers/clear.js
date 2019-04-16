@@ -1,7 +1,7 @@
 var db = require("../models");
 
 module.exports = {
-    emptyDb: function (req, res) {
+    emptyDB: function (req, res) {
         db.Headline.remove({}).then(function () {
             return db.Note.remove({})
         }).then(function () {
