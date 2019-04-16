@@ -2,10 +2,6 @@ const express = require('express');
 const mongojs = require('mongojs');
 const mongoose = require("mongoose");
 
-// var logger = require("morgan");
-
-
-
 // Our scraping tools
 // Axios is a promised-based http library, similar to jQuery's Ajax method
 // It works on the client and on the server
@@ -13,17 +9,15 @@ const axios = require("axios");
 const cheerio = require("cheerio");
 
 // Require all models
-var db = require("./models");
+const db = require("./models");
 
-var PORT = 3000;
+const PORT = 3000;
 
 // Initialize Express
-var app = express();
+const app = express();
 
 // Configure middleware
 
-// Use morgan logger for logging requests
-// app.use(logger("dev"));
 // Parse request body as JSON
 app.use(express.urlencoded({
     extended: true
@@ -33,7 +27,7 @@ app.use(express.json());
 app.use(express.static("public"));
 
 // Connect to the Mongo DB
-mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true });
+mongoose.connect("mongodb://localhost/newsflash", { useNewUrlParser: true });
 
 
 
@@ -49,7 +43,7 @@ app.get("/", function (req, res) {
         // Now, we grab every h2 within an article tag, and do the following:
         $("h3.latest-head").each(function (i, element) {
             // Save an empty result object
-            var result = {};
+            const result = {};
 
             // Add the text and href of every link, and save them as properties of the result object
             result.title = $(this)
