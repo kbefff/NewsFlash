@@ -39,15 +39,15 @@ mongoose.connect("mongodb://localhost/unit18Populater", { useNewUrlParser: true 
 
 // Routes
 
-// A GET route for scraping the echoJS website
-app.get("/scrape", function (req, res) {
+// A GET route for scraping the Sceince Daily website
+app.get("/", function (req, res) {
     // First, we grab the body of the html with axios
-    axios.get("http://www.echojs.com/").then(function (response) {
+    axios.get("https://www.sciencedaily.com/news/earth_climate/environmental_science/").then(function (response) {
         // Then, we load that into cheerio and save it to $ for a shorthand selector
         var $ = cheerio.load(response.data);
 
         // Now, we grab every h2 within an article tag, and do the following:
-        $("article h2").each(function (i, element) {
+        $("h3.latest-head").each(function (i, element) {
             // Save an empty result object
             var result = {};
 
