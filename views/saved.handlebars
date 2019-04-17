@@ -1,0 +1,64 @@
+<nav class="#8bc34a light-green" role="navigation">
+    <div class="nav-wrapper container">
+        <a id="logo-container" href="/" class="brand-logo"><i style="float: none" class="fas fa-leaf"></i>eco alt
+        </a>
+        <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="fa fa-bars material-icons"
+                aria-hidden="true"></i></a>
+        <ul class="right hide-on-med-and-down nav-items">
+            <li><a href="/aboutus">About Us</a></li>
+            <li><a href="/">Categories</a></li>
+            <li><a href="/addproduct">Add Product</a></li>
+            <li><a href="/logout">Log Out</a></li>
+        </ul>
+    </div>
+</nav>
+
+<div class="jumbotron text-center">
+    <div class="overlay">
+    </div>
+    <div class="background-image">
+    </div>
+    <div class="caption">
+        <h1>News Flash</h1>
+        <p>Daily Science</p>
+    </div>
+</div>
+<div class="container-fluid article container">
+    {{#each articles}}
+    <div data-_id="{{this.id}}" class="card">
+        <div class="card-header">
+            <h3>
+                <a class="article-link" taget="_blank" rel="noopener noreferrer"
+                    href="{{this.url}}">{{this.headline}}</a>
+                <a class="btn btn-danger delete">Delete</a>
+                <a class="btn btn-success save">Article Notes</a>
+            </h3>
+        </div>
+        <div class="card-body">{{this.summary}}</div>
+    </div>
+
+    {{/each}} {{#unless articles.length}}
+    <div class='alert alert-warning text-center'>
+        <h4>Sorry, no articles for you. Try back later!</h4>
+    </div>
+    <div class="card">
+        <div class="card-header text center">
+            <h3>What would you like to do?</h3>
+        </div>
+        <div class="card-body text-center">
+            <h4>
+                <a class="scrape-new">Get new articles!</a>
+            </h4>
+            <h4>
+                <a class="/saved">Go to My Saved Articles</a>
+            </h4>
+        </div>
+    </div>
+    {{//unless}}
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p>Scrape for the Environment</p>
+    </div>
+</footer>
