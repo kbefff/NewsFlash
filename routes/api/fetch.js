@@ -3,4 +3,4 @@ var fetchAction = require('../../controllers/fetch');
 
 router.get('/', fetchAction.extractTitles);
 
-modules.exports = router;
+module.exports = router;

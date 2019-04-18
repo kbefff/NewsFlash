@@ -5,4 +5,4 @@ router.get('/', headlineAction.findAll);
 router.delete('/:id', headlineAction.delete);
 router.put('/:id', headlineAction.update);
 
-modules.exports = router;
+module.exports = router;

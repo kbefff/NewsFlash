@@ -3,7 +3,7 @@
 // is there an index.js file in this folder?
 const db = require('../models');
 
-modules.exports = {
+module.exports = {
 
     find: (req, res) => {
         // the headline id the user is selecting on the front end
