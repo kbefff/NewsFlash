@@ -1,8 +1,9 @@
-var router = require('express').Router;
+var router = require('express').Router();
 var db = require("../../models");
 
 //this will render the homepage
 router.get('/', function(req, res){
+    console.log("test");
     db.Headline.find({saved: false})
         .sort({date: -1})
         .then(function(dbArticles){

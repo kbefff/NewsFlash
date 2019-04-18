@@ -24,7 +24,6 @@ const app = express();
 // log errors to terminal
 app.use(logger("dev"));
 
-app.use(routes);
 // Configure middleware
 
 // Parse request body as JSON
@@ -34,6 +33,7 @@ app.use(express.urlencoded({
 app.use(express.json());
 // Make public a static folder
 app.use(express.static("public"));
+
 
 // Connect to the Mongo DB
 
@@ -53,6 +53,9 @@ var exphbs = require("express-handlebars");
 
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
+
+
+app.use(routes);
 
 // Start the server
 app.listen(PORT, function () {
