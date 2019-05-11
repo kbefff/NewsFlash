@@ -7,6 +7,7 @@ router.get('/', function(req, res){
     db.Headline.find({saved: false})
         .sort({date: -1})
         .then(function(dbArticles){
+            console.log(dbArticles);
             // res.render takes the name of the file we want to render (this will be home.handlebars)
             // then inject articles into it
             // the articles are coming from dbArticles
