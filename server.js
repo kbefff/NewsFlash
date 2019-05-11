@@ -15,7 +15,7 @@ const db = require("./models");
 
 var PORT = process.env.PORT || 3000;
 
-var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/newsflash";
+var MONGODB_URI = process.env.MONGODB || "mongodb://localhost/newsflash";
 
 
 // Initialize Express
